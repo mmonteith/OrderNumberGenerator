@@ -1,0 +1,143 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Go microservice for generating order numbers",
+    "version": "1.0.0",
+    "title": "Order Number Generator"
+  },
+  "basePath": "/v0",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Check health of service",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Service is running",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "string",
+                  "description": "Time when health is checked"
+                },
+                "appName": {
+                  "type": "string",
+                  "description": "Name of service"
+                },
+                "githubBranch": {
+                  "type": "string",
+                  "description": "Github branch of service"
+                },
+                "jenkinsBuildNumber": {
+                  "type": "string",
+                  "description": "Jenkins build of service"
+                },
+                "githubHash": {
+                  "type": "string",
+                  "description": "Github hash of service"
+                },
+                "environment": {
+                  "type": "string",
+                  "description": "Environment of service"
+                },
+                "status": {
+                  "type": "string",
+                  "description": "Status of service"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Service is not running"
+          }
+        }
+      }
+    },
+    "/{siteId}/sterling-order-number": {
+      "post": {
+        "summary": "Retrieve next order number",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/siteIdParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order number returned",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "brand": {
+                  "type": "string",
+                  "description": "Code for the brand making the order request"
+                },
+                "dataCenterId": {
+                  "type": "string",
+                  "description": "Code for the datacenter processing the request"
+                },
+                "sterlingOrderNumber": {
+                  "type": "string",
+                  "description": "Next order number"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error or invalid sterling order number response",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          },
+          "400": {
+            "description": "Invalid brand or data center",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "siteIdParam": {
+      "name": "siteId",
+      "in": "path",
+      "description": "Code of site where order is made",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "an-us",
+        "an-uk",
+        "an-de",
+        "an-fr",
+        "fp-us",
+        "fp-uk",
+        "fp-cn",
+        "uo-us",
+        "uo-ca",
+        "uo-uk",
+        "uo-de",
+        "uo-fr"
+      ]
+    }
+  },
+  "definitions": {
+    "ApiError": {
+      "properties": {
+          "message": {
+            "type": "string",
+            "description": "User friendly error message"
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ -z $ORDER_NUMBER_GENERATOR_LOG_FILE ] && export ORDER_NUMBER_GENERATOR_LOG_FILE=/var/log/order-number-generator/order_number_generator.log
+
+# set log to console or to file
+if [ "$FORCE_LOG_TO_CONSOLE" = true ]; then
+    LOG_OUT="/dev/stdout"
+else
+    LOG_OUT="$ORDER_NUMBER_GENERATOR_LOG_FILE"
+fi
+
+./ordernumbergenerator >> $LOG_OUT 2>&1
