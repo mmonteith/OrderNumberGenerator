@@ -19,6 +19,7 @@ func CreateMongoSession(mongoServers string) MongoSession {
 	mhosts := strings.Split(mongoServers, ",")
 	dialInfo := &mgo.DialInfo{
 		Addrs:   mhosts,
+		Timeout: 10 * time.Second,
 	}
 	mongoSession, err := NewMongoSessionProc(dialInfo)
 	if err != nil {
