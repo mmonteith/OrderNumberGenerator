@@ -46,6 +46,14 @@
 #  Sterling Order Number Generator
 ###  v0
 
+#  URBN Backend Engineering Summer 2018 Intern Project
+* Ava Patterson, Scrum Master
+* Adam Holsinger, Developer
+* Billy Groble, Developer
+* Megan Paradowski, Developer
+* Michelle Monteith, Developer
+* Zoe Colbert, QA Engineer
+
 ##  Quick Start
 *  Clone the project in your $GOPATH/src/github.com/urbn/ directory
 *  Start Goland and open the project
