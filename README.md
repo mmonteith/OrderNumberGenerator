@@ -47,12 +47,12 @@
 ###  v0
 
 #  URBN Backend Engineering Summer 2018 Intern Project
-* Ava Patterson, Scrum Master
-* Adam Holsinger, Developer
-* Billy Groble, Developer
-* Megan Paradowski, Developer
-* Michelle Monteith, Developer
-* Zoe Colbert, QA Engineer
+* Ava Patterson, <i>Scrum Master</i>
+* Adam Holsinger, <i>Developer</i>
+* Billy Groble, <i>Developer</i>
+* Megan Paradowski, <i>Developer</i>
+* Michelle Monteith, <i>Developer</i>
+* Zoe Colbert, <i>QA Engineer</i>
 
 ##  Quick Start
 *  Clone the project in your $GOPATH/src/github.com/urbn/ directory
