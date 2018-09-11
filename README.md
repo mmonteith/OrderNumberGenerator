@@ -43,10 +43,9 @@
        .               ,,****,,,,...........     ...
 </pre>
 
-#  Sterling Order Number Generator
-###  v0
-
 #  URBN Backend Engineering Summer 2018 Intern Project
+##  Sterling Order Number Generator
+###  v0
 * Ava Patterson, <i>Scrum Master</i>
 * Adam Holsinger, <i>Developer</i>
 * Billy Groble, <i>Developer</i>
