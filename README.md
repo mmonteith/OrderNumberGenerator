@@ -8,6 +8,20 @@
 * Michelle Monteith, <i>Developer</i>
 * Zoe Colbert, <i>QA Engineer</i>
 
+#### A Note About Commits
+This is a cleaned version of our project so we were able to publish it, therefore there's no commits to credit our individual work.
+#### Personal Contributions
+* Mongo client & Mock Mongo client
+    - Mongo interfacing
+    - MongoDocument object
+    - Error object
+* OrderNumber DAO & Mock OrderNumber DAO
+* Unit Tests
+    - Mongo
+    - OrderNumber DAO
+    - config
+
+
 ##  Quick Start
 *  Clone the project in your $GOPATH/src/github.com/urbn/ directory
 *  Start Goland and open the project
