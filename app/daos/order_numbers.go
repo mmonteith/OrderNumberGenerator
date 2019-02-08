@@ -30,7 +30,6 @@ func (ond OrderNumberDao) GetOrderNumberByBrandAndDataCenter(brand, dataCenter s
 		ReturnNew: false,
 	}
 
-	//TODO @(aholsinger@urbn.com) A15-14308 Split this up to separately check for connection errors and improper number format errors
 	_, err := ond.MongoCollection.Find(bson.M{"brandId": brand, "dataCenterId": dataCenter}).Apply(change, &document)
 	if err != nil{
 		fmt.Printf("Unable to retrieve number from Mongo Collection: %s", ond.MongoCollection)
